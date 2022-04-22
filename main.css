@@ -1,0 +1,326 @@
+:root {
+    /**
+* colors
+*/
+    /* gradient */
+    --text-gradient-yellow: linear-gradient( to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+    /* solid */
+    --jet: hsl(0, 0%, 22%);
+    --onyx: hsl(240, 1%, 17%);
+    --eerie-black-1: hsl(240, 2%, 13%);
+    --eerie-black-2: hsl(240, 2%, 12%);
+    --smoky-black: hsl(0, 0%, 7%);
+    --white-1: hsl(0, 0%, 100%);
+    --white-2: hsl(0, 0%, 98%);
+    --orange-yellow-crayola: hsl(45, 100%, 72%);
+    --vegas-gold: hsl(45, 54%, 58%);
+    --light-gray: hsl(0, 0%, 84%);
+    --light-gray-70: hsla(0, 0%, 84%, 0.7);
+    --bittersweet-shimmer: hsl(0, 43%, 51%);
+    /* transition */
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease-in-out;
+}
+
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+.sidebar,
+article {
+    background: var(--eerie-black-2);
+    border: 1px solid var(--jet);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: var(--shadow-1);
+    z-index: 1;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background: var(--jet);
+    margin: 16px 0;
+}
+
+article.active {
+    display: block;
+    animation: fade 0.5s ease backwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.h2,
+.h3,
+.h4,
+.h5 {
+    color: var(--white-2);
+    text-transform: capitalize;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.h2 {
+    font-size: var(--fs-1);
+    font-family: 'Press Start 2P', cursive;
+}
+
+.h3 {
+    font-size: var(--fs-2);
+    font-family: 'Press Start 2P', cursive;
+}
+
+.h4 {
+    font-size: var(--fs-4);
+    font-family: 'Press Start 2P', cursive;
+}
+
+.h5 {
+    font-size: var(--fs-7);
+    font-weight: var(--fw-500);
+    font-family: 'Press Start 2P', cursive;
+}
+
+.article-title {
+    position: relative;
+    padding-bottom: 7px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.article-title::after {
+    content: "";
+    width: 40px;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--text-gradient-yellow);
+    border-radius: 3px;
+}
+
+
+/*-----------------------------------*\
+  #MAIN
+\*-----------------------------------*/
+
+main {
+    margin: 15px 12px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    min-width: 259px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+
+.about .article-title {
+    margin-bottom: 15px;
+}
+
+.about-text {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: 200;
+    line-height: 2.5;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+::selection {
+    background: var(--orange-yellow-crayola);
+    color: var(--smoky-black);
+}
+
+:focus {
+    outline-color: var(--orange-yellow-crayola);
+}
+
+body {
+    background: var(--smoky-black);
+}
+
+
+/*-----------------------------------*\
+  #RESPONSIVE
+\*-----------------------------------*/
+
+@media (min-width: 450px) {
+    /**
+   * client
+   */
+    .clients-item {
+        min-width: calc(33.33% - 10px);
+    }
+    /**
+   * #PORTFOLIO, BLOG 
+   */
+    .project-img,
+    .blog-banner-box {
+        height: auto;
+    }
+}
+
+@media (min-width: 580px) {
+    /**
+   * CUSTOM PROPERTY
+   */
+     :root {
+        /**
+     * typography
+     */
+        --fs-1: 32px;
+        --fs-2: 24px;
+        --fs-3: 26px;
+        --fs-4: 18px;
+        --fs-6: 15px;
+        --fs-7: 15px;
+        --fs-8: 12px;
+    }
+    /**
+   * #REUSED STYLE
+   */
+    .sidebar,
+    article {
+        width: 520px;
+        margin-inline: auto;
+        padding: 30px;
+    }
+    .article-title {
+        font-weight: var(--fw-600);
+        padding-bottom: 30px;
+    }
+    .article-title::after {
+        width: 950px;
+        height: 5px;
+    }
+    .icon-box {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 18px;
+    }
+    /**
+   * #MAIN
+   */
+    main {
+        margin-top: 60px;
+        margin-bottom: 100px;
+    }
+    /**
+   * #ABOUT
+   */
+    .about .article-title {
+        margin-bottom: 20px;
+    }
+    .about-text {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    /**
+   * CUSTOM PROPERTY
+   */
+     :root {
+        /**
+    * shadow
+    */
+        --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
+        --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+        --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+    }
+    /**
+   * REUSED STYLE
+   */
+    .sidebar,
+    article {
+        width: 950px;
+        box-shadow: var(--shadow-5);
+    }
+    /**
+   * MAIN 
+   */
+    main {
+        margin-bottom: 60px;
+    }
+    .main-content {
+        position: relative;
+        width: max-content;
+        margin: auto;
+    }
+}
+
+
+/**
+ * responsive larger than 1250px screen
+ */
+
+@media (min-width: 1250px) {
+    /**
+   * RESET
+   */
+    body::-webkit-scrollbar {
+        width: 20px;
+    }
+    body::-webkit-scrollbar-track {
+        background: var(--smoky-black);
+    }
+    body::-webkit-scrollbar-thumb {
+        border: 5px solid var(--smoky-black);
+        background: hsla(0, 0%, 100%, 0.1);
+        border-radius: 20px;
+        box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11), inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+    }
+    body::-webkit-scrollbar-thumb:hover {
+        background: hsla(0, 0%, 100%, 0.15);
+    }
+    body::-webkit-scrollbar-button {
+        height: 60px;
+    }
+    /**
+   * REUSED STYLE
+   */
+    .sidebar,
+    article {
+        width: auto;
+    }
+    article {
+        min-height: 100%;
+    }
+    /**
+   * MAIN
+   */
+    main {
+        max-width: 1200px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 25px;
+    }
+    .main-content {
+        min-width: 75%;
+        width: 75%;
+        margin: 0;
+    }
+}
