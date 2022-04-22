@@ -1,1 +1,230 @@
+:root {
+    --yellow: linear-gradient( to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+    --med-gray: hsl(0, 0%, 22%);
+    --gray: hsl(240, 1%, 17%);
+    --black: hsl(240, 2%, 12%);
+    --black2: hsl(0, 0%, 7%);
+    --white-1: hsl(0, 0%, 100%);
+    --white-2: hsl(0, 0%, 98%);
+    --yellow: hsl(45, 100%, 72%);
+    --light-gray: hsl(0, 0%, 84%);
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease-in-out;
+}
 
+article {
+    background: var(--black);
+    border: 1px solid var(--med-gray);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: var(--shadow-1);
+    z-index: 1;
+}
+
+article.active {
+    display: block;
+    animation: fade 0.5s ease backwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.h2,
+.h3,
+.h4,
+.h5 {
+    color: var(--white-2);
+    text-transform: capitalize;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.article-title {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    line-height: 2;
+    font-family: 'Press Start 2P', cursive;
+}
+
+a {
+    color: var(--yellow);
+}
+
+a:hover {
+    color: var(--med-gray);
+}
+
+.article-title::after {
+    content: "";
+    width: 40px;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--yellow);
+    border-radius: 3px;
+}
+
+main {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    padding-bottom: 0px;
+}
+
+.about-text {
+    color: var(--light-gray);
+    font-size: 17px;
+    letter-spacing: 5px;
+    line-height: 2.5;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+::selection {
+    background: var(--yellow);
+    color: var(--black2);
+}
+
+:focus {
+    outline-color: var(--yellow);
+}
+
+body {
+    background: var(--gray);
+}
+
+@media (min-width: 450px) {
+    .clients-item {
+        min-width: calc(33.33% - 10px);
+    }
+    .main-content {
+        position: relative;
+        width: max-content;
+        margin: auto;
+    }
+    .sidebar,
+    article {
+        width: 520px;
+        padding: 30px;
+    }
+    .article-title::after {
+        width: 517px;
+        height: 5px;
+    }
+}
+
+@media (min-width: 580px) {
+    .main-content {
+        position: relative;
+        width: max-content;
+        margin: auto;
+    }
+    .sidebar,
+    article {
+        width: 520px;
+        padding: 30px;
+    }
+    .article-title::after {
+        width: 520px;
+        height: 5px;
+    }
+    .icon-box {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 18px;
+    }
+    main {
+        margin-top: 60px;
+        margin-bottom: 100px;
+    }
+    .about .article-title {
+        margin-bottom: 20px;
+    }
+    .about-text {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+     :root {
+        --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
+        --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+        --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+    }
+    .article-title::after {
+        width: 950px;
+        height: 5px;
+    }
+    .sidebar,
+    article {
+        width: 950px;
+        box-shadow: var(--shadow-5);
+    }
+    main {
+        margin-bottom: 60px;
+    }
+    .main-content {
+        position: relative;
+        width: max-content;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1250px) {
+    body::-webkit-scrollbar {
+        width: 20px;
+    }
+    body::-webkit-scrollbar-track {
+        background: var(--black2);
+    }
+    body::-webkit-scrollbar-thumb {
+        border: 5px solid var(--black2);
+        background: hsla(0, 0%, 100%, 0.1);
+        border-radius: 20px;
+        box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11), inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+    }
+    body::-webkit-scrollbar-thumb:hover {
+        background: hsla(0, 0%, 100%, 0.15);
+    }
+    body::-webkit-scrollbar-button {
+        height: 60px;
+    }
+    .article-title::after {
+        width: 1139px;
+        height: 5px;
+    }
+    .sidebar,
+    article {
+        width: auto;
+    }
+    article {
+        min-height: 100%;
+    }
+    main {
+        max-width: 1200px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 25px;
+    }
+    .main-content {
+        min-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
+}
